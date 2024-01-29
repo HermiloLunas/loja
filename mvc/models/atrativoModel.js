@@ -57,11 +57,6 @@ class Atrativo{
     set imagem(value) {
         this.#imagem  = value
     }
-       
-   
-    
-    
-
      
     toJson(){
         return {
