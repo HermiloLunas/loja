@@ -314,6 +314,20 @@ class Database {
         const r = await this.#connection.execute(sql)
         return r[0]
      }
+     async verificarLogin(email, senha) {
+        try {
+            // Consulta SQL para verificar o login
+            const sql = 'SELECT * FROM gamers WHERE email_gamer = ? AND senha_gamer = ?';
+            const [rows, fields] = await this.#connection.execute(sql, [email, senha]);
+            
+            // Retorna o resultado da consulta
+            return rows;
+        } catch (error) {
+            // Trate os erros aqui
+            console.error('Erro ao verificar login:', error);
+            throw error; // Você pode tratar de forma mais apropriada de acordo com o seu contexto
+        }
+    }
     }
 
 
