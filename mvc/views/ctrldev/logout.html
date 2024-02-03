@@ -1,0 +1,31 @@
+<!-- Adicione este script em sua página HTML -->
+<script>
+    // Função para realizar logout
+    async function realizarLogout() {
+        try {
+            // Realiza a requisição para a rota de logout
+            const response = await fetch('/destroi');
+
+            // Verifica se a resposta foi bem-sucedida
+            if (response.ok) {
+                // Converte a resposta para JSON
+                const data = await response.json();
+
+                // Exibe um alerta com a mensagem da resposta
+                alert(data.message);
+
+                // Redireciona para a página de admin após o logout
+                window.location.href = '/admin';
+            } else {
+                // Exibe um alerta em caso de erro
+                alert('Erro ao fazer logout. Tente novamente.');
+            }
+        } catch (error) {
+            console.error('Erro ao fazer logout:', error);
+        }
+    }
+    realizarLogout()
+    // Chama a função de logout quando necessário
+    // Por exemplo, em um botão de logout
+    // <button onclick="realizarLogout()">Logout</button>
+</script>

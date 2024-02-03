@@ -37,15 +37,19 @@
                 <a class="nav-link  btn bg-warning" aria-current="page" href="listvendas.html"><i class="bi bi-file-image-fill"></i> Vendas</a>
               </li>
               <li class="nav-item m-1 ms-5">
-                <a class="nav-link  btn text-bg-danger" aria-current="page" href="#"> <i class="bi bi-x-octagon"></i> Sair</a>
+                <a class="nav-link  btn text-bg-danger" aria-current="page" href="/logout"> <i class="bi bi-x-octagon"></i> Sair</a>
               </li>
              
             </ul>
           </div>
         </div>
       </nav>
-        <div class="row"><h2>Olá seu nome aqui,</h2>
-            <p>Terça feira, 03 de outubro de 2023!</p>
+        <div class="row">
+          <% if (email) { %>
+            <p>Olá, <%= email %>!</p>
+        <% } else { %>
+            <p>Email não disponível.</p>
+        <% } %>
         </div>
     </header>
     <main class="container border border-1 ">
